@@ -163,6 +163,21 @@ const config = async (options: {
                 },
             },
         ] : []),
+        {
+            files: ['**/*.{ts,tsx,vue}'],
+            languageOptions: {
+                parser: await import('vue-eslint-parser'),
+                parserOptions: {
+                    parser: await import('@typescript-eslint/parser'),
+                    extraFileExtensions: ['.vue'],
+                    ecmaVersion: 2020,
+                    sourceType: 'module',
+                }
+            },
+            rules: {
+                '@typescript-eslint/consistent-type-imports': 'error',
+            }
+        },
         ({
             plugins: {
                 '@stylistic/ts': stylisticTs,
@@ -183,7 +198,6 @@ const config = async (options: {
                 'no-empty-function': ['warn'],
                 '@typescript-eslint/ban-ts-comment': ['off'],
                 '@typescript-eslint/explicit-member-accessibility': ['warn'],
-                '@typescript-eslint/consistent-type-imports': 'error',
                 '@typescript-eslint/no-unused-vars': 'warn',
                 '@stylistic/ts/type-annotation-spacing': 'error',
 
