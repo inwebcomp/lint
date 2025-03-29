@@ -1,0 +1,47 @@
+{
+    "name": "@escral/lint",
+    "description": "Linting configuration",
+    "version": "2.0.5",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js"
+        }
+    },
+    "scripts": {
+        "pub": "npx new-version -s && npm publish --access public",
+        "build": "tsup src/index.ts --format cjs,esm --dts --clean"
+    },
+    "devDependencies": {
+        "@escral/versioning": "^1.5",
+        "tsup": "^8.3.0",
+        "vue": "^3.5.8"
+    },
+    "peerDependencies": {
+        "vue": "^3"
+    },
+    "dependencies": {
+        "@rushstack/eslint-patch": "^1.10.4",
+        "@stylistic/eslint-plugin-js": "^2.12.1",
+        "@stylistic/eslint-plugin-ts": "^2.12.1",
+        "@typescript-eslint/eslint-plugin": "^8.18.0",
+        "@typescript-eslint/parser": "^8.18.0",
+        "@typescript-eslint/typescript-estree": "^8.18.0",
+        "@vue/eslint-config-typescript": "^14.1.4",
+        "@vue/tsconfig": "^0.7.0",
+        "eslint": "^9.16.0",
+        "eslint-plugin-import-newlines": "^1.4.0",
+        "eslint-plugin-vue": "^9.32.0",
+        "lint-staged": "^15.2.11",
+        "typescript": "^5.7.2",
+        "yorkie": "^2.0.0"
+    },
+    "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+}
