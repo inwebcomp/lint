@@ -17,7 +17,7 @@
     },
     "scripts": {
         "pub": "npx new-version -s && npm publish --access public",
-        "build": "tsup src/index.ts --format cjs,esm --dts --clean"
+        "build": "tsup src/index.ts --format cjs,esm --dts --clean --external vue-eslint-parser"
     },
     "devDependencies": {
         "@escral/versioning": "^1.5",
